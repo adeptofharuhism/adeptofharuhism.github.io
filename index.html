@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>ПАРМА-ДЕТЕКТ</title>
+		<meta charset='utf-8'>
+        <meta name='description' content='Приветственная страничка'>
+        <!--для мобилок-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Последний скомпилированный и минимизированный Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+            crossorigin="anonymous">
+	</head>
+	<body>
+        <!--мой контент-->
+        <style>
+            body {
+                color: #B6F569;
+                background: #443647;
+                margin: 0;
+                padding: 0;
+            }
+            .top-bar  div[class^="col"] {
+                border: 1px solid #b6f569;
+                color: #B6F569;
+                background: #443647;
+                text-align: center;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                align-content: center;
+            }
+            .top-bar{
+                height: 9vh;
+            }
+            .section-dye{
+                color: #B6F569;
+                background: #443647;
+                text-align: right;
+                border-color: #B6F569;
+                border-radius: 0px;
+            }
+            .btn-primary:hover{
+                background: #C6FF79;
+                color: #443647;
+                text-align: right;
+                border-color: #C6FF79;
+            }
+            .greeting-container {
+                display: flex;
+                flex-direction: column;
+                height: 91vh;
+            }
+            .text-container{
+                padding-left: 15%;
+            }
+            .form-control::placeholder{
+                color: #C6FF79;
+            }
+            .form-control:focus{
+                color: #B6F569;
+                background: #443647;
+            }
+            .form-inline{
+                float:right;
+            }
+        </style>
+        <div class='container-fluid'>
+            <div class="top-bar">
+                <!-- Сетка Bootstrap -->
+                <div class="row">
+                    <div id='register' class="col-2" title="Регистрация в системе ">
+                        <div>Регистрация</div>
+                        <!--button id='register' class="btn section-dye" aria-pressed="false">Регистрация</button-->
+                    </div>
+                    <div class="col-10">
+                        <form class="form-inline" action="main.html">
+                            <div class="input-group">
+                                <input type="text" class="form-control section-dye" 
+                                id="login" name="login" placeholder="Логин" title="Введите логин в это поле">
+                                <input type="password" class="form-control section-dye" 
+                                id="pass" name="pass" placeholder="Пароль" title="Введите пароль в это поле">
+                            </div>
+                            <button type="submit" class="btn btn-primary ml-2 section-dye" aria-pressed="false">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="greeting-container">
+            <div class="text-container my-auto">
+                <h3>Добро пожаловать в ПАРМА-ДЕТЕКТ</h3>
+                <ol>
+                    <li>Войдите в систему</li>
+                    <li>Загрузите снимок</li>
+                    <li>Ознакомьтесь с зонами вырубок в снятой зоне</li>
+                    <li>Скачайте отчет с полным списком вырубок</li>
+                </ol>
+            </div>
+        </div>
+        <!--конец моего контента-->
+
+        <!-- Библиотека jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <!-- Popper.js для всплывающих подсказок -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+            crossorigin="anonymous"></script>
+        <!-- Последний скомпилированный и минимизированный Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="scripts/main.js"></script>
+	</body>
+</html>

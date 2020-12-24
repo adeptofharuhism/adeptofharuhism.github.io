@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>ПАРМА-ДЕТЕКТ</title>
+		<meta charset='utf-8'>
+        <meta name='description' content='Приветственная страничка'>
+        <!--для мобилок-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Последний скомпилированный и минимизированный Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+            crossorigin="anonymous">
+	</head>
+	<body>
+        <!--мой контент-->
+        <style>
+            body {
+                color: #B6F569;
+                background: #443647;
+                margin: 0;
+                padding: 0;
+            }
+            .top-bar  div[class^="col"] {
+                border: 1px solid #b6f569;
+                color: #B6F569;
+                background: #443647;
+                text-align: center;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                align-content: center;
+            }
+            .top-bar{
+                height: 9vh;
+            }
+            .section-dye{
+                color: #B6F569;
+                background: #443647;
+                text-align: right;
+                border-color: #B6F569;
+                border-radius: 0px;
+            }
+            .btn-primary:hover{
+                background: #C6FF79;
+                color: #443647;
+                text-align: right;
+                border-color: #C6FF79;
+            }
+            canvas{
+                background: #a5a5a5;
+                color: #443647;
+                flex-grow: 3;
+            }
+            .canvas-container {
+                display: flex;
+                flex-direction: column;
+                height: 91vh;
+            }
+            .form-control::placeholder{
+                color: #C6FF79;
+            }
+            .form-control:focus{
+                color: #B6F569;
+                background: #443647;
+            }
+            .form-inline{
+                float:right;
+            }
+        </style>
+        <div class='container-fluid'>
+            <div class="top-bar">
+                <!-- Сетка Bootstrap -->
+                <div class="row">
+                    <div class="col-2" title="Загрузить изображение со спутника для обработки">
+                        <button class="btn section-dye p-auto" aria-pressed="false">Загрузить</button>
+                    </div>
+                    <div class="col-2" title="Скачать отчет по предоставленному изображению">
+                        <button class="btn section-dye p-auto" aria-pressed="false">Скачать отчет</button>
+                    </div>
+                    <div class="col-8">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <canvas id="main-canvas"></canvas>
+        </div>
+        <!--конец моего контента-->
+
+        <!-- Библиотека jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <!-- Popper.js для всплывающих подсказок -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+            crossorigin="anonymous"></script>
+        <!-- Последний скомпилированный и минимизированный Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="scripts/main.js"></script>
+	</body>
+</html>
