@@ -53,7 +53,8 @@
             .canvas-container {
                 display: flex;
                 flex-direction: column;
-                height: 91vh;
+                height: 512px;
+                width: 512px;
             }
             .form-control::placeholder{
                 color: #C6FF79;
@@ -68,15 +69,15 @@
         </style>
         <div class='container-fluid'>
             <div class="top-bar">
-                <!-- Сетка Bootstrap -->
                 <div class="row">
-                    <div class="col-2" title="Загрузить изображение со спутника для обработки">
+                    <div id='ss' class="col-2" title="Загрузить изображение со спутника для обработки">
                         <button class="btn section-dye p-auto" aria-pressed="false">Загрузить</button>
                     </div>
                     <div class="col-2" title="Скачать отчет по предоставленному изображению">
                         <button class="btn section-dye p-auto" aria-pressed="false">Скачать отчет</button>
                     </div>
                     <div class="col-8">
+                        <input type="file" id="file" class="section-dye">
                     </div>
                 </div>
             </div>
@@ -98,6 +99,33 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-        <script src="scripts/main.js"></script>
+        <!--geotiff-->
+        <script src="https://cdn.jsdelivr.net/npm/geotiff"></script>
+        <!--plotty.js-->
+        <script src="node_modules/plotty/dist/plotty.min.js"></script>
+        <script>
+            var inpt = document.querySelector('#file');
+            inpt.onchange = async function() {
+                var tiff = await GeoTIFF.fromBlob(inpt.files[0]);
+                var img = await tiff.getImage();
+                console.log('getting data');
+                var data = await tiff.readRasters();
+                console.log('preparing plot');
+                var plt = new plotty.plot(
+                    {
+                        canvas: document.getElementById('main-canvas'),
+                        data: data[1],
+                        width: 512,
+                        height: 512,
+                        domain: [0, 65536],
+                        colorScale: "earth"
+                    }
+                );
+                console.log('almost');
+                plt.render();
+                console.log(img.getWidth());
+                console.log(img.getHeight());
+            };
+        </script>
 	</body>
 </html>
