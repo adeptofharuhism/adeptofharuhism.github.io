@@ -45,7 +45,7 @@
                 text-align: right;
                 border-color: #C6FF79;
             }
-            .greeting-container {
+            .content {
                 display: flex;
                 flex-direction: column;
                 height: 91vh;
@@ -60,42 +60,24 @@
                 color: #B6F569;
                 background: #443647;
             }
-            .form-inline{
+            .element-on-right{
                 float:right;
+            }
+            .input-in-form{
+                width: 35%;
             }
         </style>
         <div class='container-fluid'>
             <div class="top-bar">
-                <!-- Сетка Bootstrap -->
                 <div class="row">
-                    <div id='register' class="col-2" title="Регистрация в системе ">
-                        <div>Регистрация</div>
-                        <!--button id='register' class="btn section-dye" aria-pressed="false">Регистрация</button-->
-                    </div>
-                    <div class="col-10">
-                        <form class="form-inline" action="main.html">
-                            <div class="input-group">
-                                <input type="text" class="form-control section-dye" 
-                                id="login" name="login" placeholder="Логин" title="Введите логин в это поле">
-                                <input type="password" class="form-control section-dye" 
-                                id="pass" name="pass" placeholder="Пароль" title="Введите пароль в это поле">
-                            </div>
-                            <button type="submit" class="btn btn-primary ml-2 section-dye" aria-pressed="false">Войти в систему</button>
-                        </form>
-                    </div>
+                    {% block topbar %}
+                    {% endblock %}
                 </div>
             </div>
         </div>
-        <div class="greeting-container">
-            <div class="text-container my-auto">
-                <h3>Добро пожаловать в ПАРМА-ДЕТЕКТ</h3>
-                <ol>
-                    <li>Войдите в систему</li>
-                    <li>Загрузите снимок</li>
-                    <li>Ознакомьтесь с зонами вырубок в снятой зоне</li>
-                    <li>Скачайте отчет с полным списком вырубок</li>
-                </ol>
-            </div>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
         </div>
         <!--конец моего контента-->
 
@@ -111,6 +93,5 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-        <script src="scripts/main.js"></script>
 	</body>
 </html>

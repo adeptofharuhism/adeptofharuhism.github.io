@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+
+{% block topbar %}
+<div id='register' class="col-12" title="Регистрация в системе ">
+    <form class="form-inline element-on-right" action="{% url 'landing' %}">
+        <button type="submit" class="btn btn-primary ml-2 section-dye" aria-pressed="false">Назад</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="text-container my-auto">
+    <h1>Регистрация</h1>
+    {% if error %}
+        <p><small>Ошибка: {{error}}</small></p>
+    {% endif %}
+    <form method="POST" class="form">{% csrf_token %}
+        <p><input class='input-in-form' placeholder='Имя пользователя' type="text" name="username" maxlength="150" required id="id_username"></p>
+        <p><input class='input-in-form' placeholder='Пароль' type="password" name="password" maxlength="128" required id="id_password"></p>
+        <p><input class='input-in-form' placeholder='E-Mail' type="email" name="email" maxlength="254" id="id_email"></p>
+        <p><input class='input-in-form' placeholder='Имя' type="text" name="first_name" maxlength="30" id="id_first_name"></p>
+        <p><input class='input-in-form' placeholder='Фамилия' type="text" name="last_name" maxlength="150" id="id_last_name"></p>
+        <button type="submit" class="btn btn-primary section-dye" aria-pressed="false">Зарегистрироваться</button>
+    </form>
+</div>
+{% endblock %}
