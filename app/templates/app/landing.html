@@ -16,7 +16,7 @@
     <div class="col-10">
         <form class="form-inline element-on-right" action="{% url 'log_in' %}" method="POST">{% csrf_token %}
             {% if error %}
-            <span class="mr-2">{{error}}</span>
+            <span class="mr-2"><small>{{error}}</small></span>
             {% endif %}
             <div class="input-group">
                 <input type="text" class="form-control section-dye" 
